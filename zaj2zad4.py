@@ -1,6 +1,6 @@
 import random
 
-slowa =("python" ,"gdansk","dlaczego","gdynia","wsb")
+slowa =("reda" ,"gdansk","rumia","gdynia","warszawa")
 word = random.choice(slowa)
 poprawnie = word
 #pomie=""
