@@ -1,52 +1,31 @@
 import random
-
-slowa =("reda" ,"gdansk","rumia","gdynia","warszawa")
-word = random.choice(slowa)
+slowa=("python", "gdansk", "dlaczego", "gdynia", "wsb")
+word=random.choice(slowa)
 poprawnie = word
-#pomie=""
-iloscLiter= len(word)
-szansa =0
-licznik = 0
-#podp = 100
-
-#while word:
-	#position = random.randrange(len(word))
-	#pomie+=word[position]
-	#word =word[:position] + word [(position +1):]
-#print(word)
-
-
-
-print (
+iloscliter=len(word)
+b=5
+print(
 """
-Witaj w grze 'Jaka to melodi... Wróć jakie To Miasto!  
-Znając ilość liter zgadnij nazwe miasta , masz 5 szans za zadanie pytania czy jakas litera znajduje sie w slowie
-Komputer moze odpowiedziec tylko TAK lub NIE
-(Aby zakończyć zgadywanie, naciśnij klawisz Enter bez podawania odpowiedzi.)
+	Witaj w grze 'Losowe slowa'!
+	Masz na poczatek 5 prob na sprawdzenie,
+	czy dana litera wystepuje w wylosowanym slowie.
+	Nastepnie po 5 probach musisz odgadnac slowo.
+	(Aby zakonczyc zgadywanie, nacisnij klawisz Enter
+	 bez podawania odpowiedzi.)
 """
 )
-print
-("Zgadnij, jakie to słowo gdy ilosc liter to: ",iloscLiter)
- 
- 
-while szansa <5: 
-	litera = input ("Podaj litere: ")
-	if litera in poprawnie:
+while b>0:
+	litera = input("\nTwoja litera: ")
+	if litera in poprawnie and litera !="":
 		print("TAK")
-		szansa= szansa+1
+		b = b-1
 	else:
 		print("NIE")
-		szansa= szansa+1
-
-miasto = input ("podaj miasto: ")
-if miasto ==poprawnie:
-	print ("brawo TY!!!" )
-else:
-	print ("niestety nie udalo sie")
-
-		
-	
-
-
-#print("Dziekuje za udzial w grze. Udalo ci sie odpowiedziec w ",licznik, "probach Twoj wynik to: ",podp)
-
+		b = b-1
+zgaduj = input("\nTwoja odpowiedz: ")
+while zgaduj != poprawnie and zgaduj !="":
+	print("Niestety, to nie to slowo.")
+	zgaduj = input("\nTwoja odpowiedz: ")
+if zgaduj == poprawnie and zgaduj !="":
+	print("\nZgadza sie!")
+print("Dziekuje za udzial w grze")
